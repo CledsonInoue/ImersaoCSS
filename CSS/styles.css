@@ -7,6 +7,7 @@
 
 body {
     background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&w=1000&q=80');
+    /*background-image: url('../IMG/s_herobg.jpg');*/
     background-size: auto 100vh;
     font-family: Arial;
     font-size: 10px;
@@ -15,13 +16,13 @@ body {
 /* Breakpoints - Caso a tela tenha ao menos 400px, os estilos abaixo serão carregados */
   @media (min-width: 400px) {
     body {
-        font-size: 14px;
+        font-size: 16px;
     }
   }
 /* Breakpoints - Caso a tela tenha ao menos 600px, os estilos abaixo serão carregados */
   @media (min-width: 600px) {
     body {
-        font-size: 18px;
+        font-size: 20px;
     }
   }
 
@@ -41,15 +42,16 @@ body {
 
   .menu ul {
     display: flex;
+    font-family: 'Orbitron', sans-serif;
     justify-content: space-around;
   }
   .menu li {
     list-style: none;
   }
 
-  .menu a {
-    /*  background-color: red;*/
-  }
+ /* .menu a {
+     background-color: red;
+  }*/
   
   a {
     color: teal;
@@ -57,13 +59,13 @@ body {
   }
   
   a:hover {
-    color: red;
     text-decoration: underline;
   }
   
   .site-subtitle,
   .site-title {
     color: whitesmoke;
+    font-family: 'Luckiest Guy', cursive;
     text-align: center;
   }
 
@@ -73,10 +75,53 @@ body {
   }
 */  
   .site-subtitle {
+    font-family: 'Bangers', cursive;
     font-style: italic;
+  }
+  .about {
+    padding: 2em;
+    height: 100vh;
+  }
+  .about h2 {
+    color: whitesmoke;
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
+    margin-bottom: 2em;
+  }
+
+  .about .grid {
+    display: grid;
+    gap: 2em;
+   
+  }
+
+  @media (min-width: 570px) {
+    .about .grid, .experiencia .grid, .contact .grid{
+      grid-template-columns: 240px 240px;
+    }
+  }
+
+  @media (min-width: 880px) {
+    .about .grid{
+      grid-template-columns: repeat(3, 240px);
+      align-content: center;
+      justify-content: center;
+      height: calc(100vh - 4em - 43px);
+    }
+  }
+
+  .about figure {
+    text-align: center;
   }
 
   .img-about {
-    height: 180px;  
-    width: 180px;
+    height: 150px;  
+    width: 240px;
   }
+
+  /*@media (min-width: 1000px) {
+    .img-about {
+      height: auto;  
+      width: 100%;
+    }
+  }*/
