@@ -1,13 +1,12 @@
 /* Reset do CSS */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
 body {
     background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&w=1000&q=80');
-    /*background-image: url('../IMG/s_herobg.jpg');*/
     background-size: auto 100vh;
     font-family: Arial;
     font-size: 10px;
@@ -34,10 +33,27 @@ body {
   }
   
   .menu {
-    background-color: white;
+    background-color: whitesmoke;
     position: fixed;
     width: 100vw;
-    top: 0px;
+    top: 0;
+    z-index: 1;
+  }
+
+  .menu a {
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 50ms, color 1s;
+  }
+
+  .menu a:active {
+    background-color: red;
+    color: green;
+  }
+
+  .menu a:hover {
+    background-color: teal;
+    color: whitesmoke;
   }
 
   .menu ul {
@@ -45,6 +61,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     justify-content: space-around;
   }
+
   .menu li {
     list-style: none;
   }
@@ -60,6 +77,20 @@ body {
   
   a:hover {
     text-decoration: underline;
+  }
+
+  .titulo {
+    transform: scale(.2) translateY(50vh);
+    opacity: 0;
+
+    animation: linear .5s animaTitulo forwards;
+  }
+
+  @keyframes animaTitulo { /* linkado a propriedade animation acima */
+    100%{
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
   }
   
   .site-subtitle,
@@ -78,35 +109,40 @@ body {
     font-family: 'Bangers', cursive;
     font-style: italic;
   }
+
+  .resume, .contact,
   .about {
-    padding: 2em;
-    height: 100vh;
+    padding: 1em;
+    min-height: 100vh;
   }
+
+  .resume, .contact,
   .about h2 {
     color: whitesmoke;
     font-family: 'Bangers', cursive;
-    font-size: 2em;
+    font-size: 1em;
+    margin-top: 2em;
     margin-bottom: 2em;
   }
 
+  .resume, .contact,
   .about .grid {
     display: grid;
     gap: 2em;
    
   }
 
-  @media (min-width: 570px) {
-    .about .grid, .experiencia .grid, .contact .grid{
+  @media (min-width: 600px) {
+    .about .grid, .resume .grid, .contact .grid{
       grid-template-columns: 240px 240px;
     }
   }
 
   @media (min-width: 880px) {
-    .about .grid{
+    .about .grid, .resume .grid, .contact .grid{
       grid-template-columns: repeat(3, 240px);
       align-content: center;
       justify-content: center;
-      height: calc(100vh - 4em - 43px);
     }
   }
 
@@ -115,10 +151,34 @@ body {
   }
 
   .img-about {
+    border-radius: 10%;
     height: 150px;  
     width: 240px;
+    object-fit: cover;
+    object-position: left;
+    transition: transform 500ms;
   }
 
+  .img-about:hover {
+    transform: scale(1.2) rotate(360deg);
+  }
+
+  .contact .icons {
+    text-align: center;
+  }
+
+  .contact a {
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 25ms;
+  }
+
+  .contact a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255,255,255,.5);
+  }
+  
+ 
   /*@media (min-width: 1000px) {
     .img-about {
       height: auto;  
